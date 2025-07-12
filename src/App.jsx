@@ -53,7 +53,7 @@ const featureIcons = {
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-[#fcf7e3]">
+    <div className="min-h-screen bg-[#fcf7e3] overflow-y-hidden">
       {/* Top yellow info bar */}
       <div className="w-full bg-[#ffe000] text-black text-center font-bold py-2 text-lg">
         Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
