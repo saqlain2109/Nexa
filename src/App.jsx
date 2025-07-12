@@ -5,6 +5,7 @@ import tharNewImg from './assets/2021-Mahindra-Thar.jpg';
 import cretaImg from './assets/creta-new-model.webp';
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const beachImg = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'; // Placeholder image
 
@@ -52,35 +53,62 @@ const featureIcons = {
 };
 
 const App = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#fcf7e3] overflow-y-hidden">
-      {/* Top yellow info bar */}
-      <div className="w-full bg-[#ffe000] text-black text-center font-bold py-2 text-lg">
-        Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+    {/* Top Info Bar */}
+    <div className="w-full bg-[#ffe000] text-black text-center font-bold py-2 text-lg">
+      Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+    </div>
+
+    {/* Header */}
+    <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between relative z-50">
+      {/* Logo */}
+      <div className="flex items-center gap-4">
+        <img src={logoImg} alt="Logo" className="w-16 h-16 object-contain rounded-xl p-2 bg-white shadow border" />
+        <div>
+          <div className="text-3xl font-extrabold text-black tracking-widest">NEXA</div>
+          <div className="text-sm text-gray-500 tracking-wider">CAR RENTAL GOA</div>
+        </div>
       </div>
-      {/* Header */}
-      <header className="flex items-center justify-between px-8 py-6 bg-white shadow-md">
-        {/* Logo */}
-        <div className="flex items-center gap-5">
-          <img src={logoImg} alt="Logo" className="w-20 h-20 object-contain rounded-xl p-2 bg-white shadow-lg border border-gray-200" />
-          <div className="text-4xl font-extrabold text-black tracking-widest font-sans" style={{letterSpacing: '0.2em'}}>NEXA
-            <div className="text-base font-normal tracking-widest text-gray-500 mt-1" style={{letterSpacing: '0.15em'}}>CAR RENTAL GOA</div>
+
+      {/* Desktop Navigation */}
+      <nav className="hidden lg:flex gap-6 text-base font-semibold text-black">
+        <a href="/" className="hover:text-[#ffe000]">Home</a>
+        <a href="/rental-cars" className="text-[#ffe000]">Rental Cars</a>
+        <a href="#" className="hover:text-[#ffe000]">Fleet & Prices</a>
+        <a href="#" className="hover:text-[#ffe000]">FAQs</a>
+        <a href="#" className="hover:text-[#ffe000]">About</a>
+      </nav>
+
+      {/* Desktop "Call Now" Button */}
+      <div className="hidden lg:flex bg-[#ffe000] px-6 py-3 rounded-2xl flex-col items-center shadow">
+        <span className="text-sm text-black font-medium">Call to Book Now</span>
+        <span className="text-xl font-bold text-black">+91 87670 08636</span>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button className="lg:hidden text-3xl text-black focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-md border-t border-gray-200 px-6 py-4 lg:hidden z-40">
+          <nav className="flex flex-col gap-4 text-base font-semibold text-black">
+            <a href="/" className="hover:text-[#ffe000]">Home</a>
+            <a href="/rental-cars" className="text-[#ffe000]">Rental Cars</a>
+            <a href="#" className="hover:text-[#ffe000]">Fleet & Prices</a>
+            <a href="#" className="hover:text-[#ffe000]">FAQs</a>
+            <a href="#" className="hover:text-[#ffe000]">About</a>
+          </nav>
+          <div className="mt-6 bg-[#ffe000] px-6 py-3 rounded-2xl text-center shadow">
+            <div className="text-sm text-black font-medium">Call to Book Now</div>
+            <div className="text-xl font-bold text-black">+91 87670 08636</div>
           </div>
         </div>
-        {/* Navigation */}
-        <nav className="flex gap-10 text-xl font-semibold">
-          <a href="#" className="text-[#ffe000]">Home</a>
-          <Link to="/rental-cars" className="hover:text-[#ffe000]">Rental Cars</Link>
-          <a href="#" className="hover:text-[#ffe000]">Fleet & Prices</a>
-          <a href="#" className="hover:text-[#ffe000]">FAQs</a>
-          <a href="#" className="hover:text-[#ffe000]">About</a>
-        </nav>
-        {/* Call to Book */}
-        <div className="bg-[#ffe000] px-10 py-5 rounded-2xl flex flex-col items-center shadow-xl">
-          <span className="text-base text-black font-medium">Call to Book Now</span>
-          <span className="text-3xl font-bold text-black">+918767008636</span>
-        </div>
-      </header>
+      )}
+    </header>
       {/* Hero Section */}
       <main className="flex flex-col md:flex-row items-center justify-between px-8 py-12 md:py-20 max-w-7xl mx-10">
         {/* Left: Text & Form */}

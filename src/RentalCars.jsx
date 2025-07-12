@@ -5,6 +5,7 @@ import tharNewImg from './assets/2021-Mahindra-Thar.jpg';
 import cretaImg from './assets/creta-new-model.webp';
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const featureIcons = {
   Automatic: (
@@ -71,18 +72,19 @@ function renderDescription(text) {
 
 const RentalCars = () => {
   const [showFull, setShowFull] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   // Show first 4 lines when collapsed
   const lines = mainDescription.split('\n');
   const collapsedText = lines.slice(0, 4).join(' ');
 
   return (
-    <div className="min-h-screen bg-[#fcf7e3] overflow-y-hidden">
+    <div className="min-h-screen bg-[#fcf7e3] overflow-x-hidden overflow-y-hidden">
       {/* Top yellow info bar */}
       <div className="w-full bg-[#ffe000] text-black text-center font-bold py-2 text-lg">
         Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
       </div>
       {/* Header */}
-      <header className="flex items-center justify-between px-8 py-6 bg-white shadow-md">
+      <header className="flex items-center justify-between px-8 py-6 bg-white shadow-md relative">
         {/* Logo */}
         <div className="flex items-center gap-5">
           <img src={logoImg} alt="Logo" className="w-20 h-20 object-contain rounded-xl p-2 bg-white shadow-lg border border-gray-200" />
@@ -90,14 +92,44 @@ const RentalCars = () => {
             <div className="text-base font-normal tracking-widest text-gray-500 mt-1" style={{letterSpacing: '0.15em'}}>CAR RENTAL GOA</div>
           </div>
         </div>
+        {/* Hamburger Icon for Mobile */}
+        <button
+          className="block md:hidden text-3xl text-black focus:outline-none z-30"
+          onClick={() => setSidebarOpen(true)}
+        >
+          <FaBars />
+        </button>
         {/* Navigation */}
-        <nav className="flex gap-10 text-xl font-semibold">
+        <nav className="hidden md:flex flex-wrap gap-4 md:gap-10 text-base md:text-xl font-semibold justify-center md:justify-start w-full md:w-auto">
           <a href="/" className="hover:text-[#ffe000]">Home</a>
           <a href="/rental-cars" className="text-[#ffe000]">Rental Cars</a>
           <a href="#" className="hover:text-[#ffe000]">Fleet & Prices</a>
           <a href="#" className="hover:text-[#ffe000]">FAQs</a>
           <a href="#" className="hover:text-[#ffe000]">About</a>
         </nav>
+        {/* Sidebar for Mobile */}
+        {sidebarOpen && (
+          <div className="fixed inset-0 z-40 flex">
+            {/* Overlay */}
+            <div className="fixed inset-0 bg-black opacity-40" onClick={() => setSidebarOpen(false)}></div>
+            {/* Sidebar */}
+            <div className="relative bg-white w-64 h-full shadow-xl z-50 flex flex-col p-8 animate-slideInLeft">
+              <button
+                className="absolute top-4 right-4 text-2xl text-black focus:outline-none"
+                onClick={() => setSidebarOpen(false)}
+              >
+                <FaTimes />
+              </button>
+              <nav className="flex flex-col gap-6 text-lg font-semibold mt-8">
+                <a href="/" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Home</a>
+                <a href="/rental-cars" className="text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Rental Cars</a>
+                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Fleet & Prices</a>
+                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>FAQs</a>
+                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>About</a>
+              </nav>
+            </div>
+          </div>
+        )}
         {/* Call to Book */}
         <div className="bg-[#ffe000] px-10 py-5 rounded-2xl flex flex-col items-center shadow-xl">
           <span className="text-base text-black font-medium">Call to Book Now</span>
