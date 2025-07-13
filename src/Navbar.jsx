@@ -23,10 +23,10 @@ const Navbar = () => {
         <Link to="/about" className="hover:text-blue-600 transition-colors">About</Link>
       </nav>
       {/* Desktop Call Now Button */}
-      <div className="hidden lg:flex bg-blue-600 px-6 py-3 rounded-2xl flex-col items-center shadow">
+      <a href="tel:+919987345878" className="hidden lg:flex bg-blue-600 px-6 py-3 rounded-2xl flex-col items-center shadow hover:bg-blue-700 transition cursor-pointer no-underline">
         <span className="text-sm text-white font-medium">Call to Book Now</span>
         <span className="text-xl font-bold text-white">+91 99873 45878</span>
-      </div>
+      </a>
       {/* Mobile Menu Button */}
       <button className="lg:hidden text-3xl text-black focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
@@ -41,10 +41,10 @@ const Navbar = () => {
             <Link to="/faqs" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>FAQs</Link>
             <Link to="/about" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
           </nav>
-          <div className="mt-6 bg-blue-600 px-6 py-3 rounded-2xl text-center shadow">
+          <a href="tel:+919987345878" className="mt-6 bg-blue-600 px-6 py-3 rounded-2xl text-center shadow hover:bg-blue-700 transition cursor-pointer no-underline block">
             <div className="text-sm text-white font-medium">Call to Book Now</div>
             <div className="text-xl font-bold text-white">+91 99873 45878</div>
-          </div>
+          </a>
         </div>
       )}
     </header>
