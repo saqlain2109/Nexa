@@ -6,6 +6,8 @@ import cretaImg from './assets/creta-new-model.webp';
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import Navbar from './Navbar'
 
 const featureIcons = {
   Automatic: (
@@ -50,14 +52,14 @@ const featureIcons = {
 };
 
 const filterIcons = [
-  { label: 'All', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffe000" strokeWidth="2" fill="#fff"/><rect x="7" y="13" width="10" height="4" rx="2" fill="#ffe000"/><rect x="8" y="7" width="8" height="6" rx="2" fill="#ffe000"/></svg> },
-  { label: 'Hatchback', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffe000" strokeWidth="2" fill="#fff"/><rect x="6" y="13" width="12" height="4" rx="2" fill="#ffe000"/><rect x="8" y="9" width="8" height="4" rx="2" fill="#ffe000"/></svg> },
-  { label: 'Sedan', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffe000" strokeWidth="2" fill="#fff"/><rect x="5" y="14" width="14" height="3" rx="1.5" fill="#ffe000"/><rect x="7" y="10" width="10" height="4" rx="2" fill="#ffe000"/></svg> },
-  { label: 'SUV', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffe000" strokeWidth="2" fill="#fff"/><rect x="6" y="13" width="12" height="4" rx="2" fill="#ffe000"/><rect x="7" y="8" width="10" height="5" rx="2.5" fill="#ffe000"/></svg> },
-  { label: 'Thar', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffe000" strokeWidth="2" fill="#fff"/><rect x="7" y="13" width="10" height="4" rx="2" fill="#ffe000"/><rect x="9" y="8" width="6" height="5" rx="2.5" fill="#ffe000"/></svg> },
+  { label: 'All', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="#fff"/><rect x="7" y="13" width="10" height="4" rx="2" fill="#2563eb"/><rect x="8" y="7" width="8" height="6" rx="2" fill="#2563eb"/></svg> },
+  { label: 'Hatchback', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="#fff"/><rect x="6" y="13" width="12" height="4" rx="2" fill="#2563eb"/><rect x="8" y="9" width="8" height="4" rx="2" fill="#2563eb"/></svg> },
+  { label: 'Sedan', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="#fff"/><rect x="5" y="14" width="14" height="3" rx="1.5" fill="#2563eb"/><rect x="7" y="10" width="10" height="4" rx="2" fill="#2563eb"/></svg> },
+  { label: 'SUV', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="#fff"/><rect x="6" y="13" width="12" height="4" rx="2" fill="#2563eb"/><rect x="7" y="8" width="10" height="5" rx="2.5" fill="#2563eb"/></svg> },
+  { label: 'Thar', icon: <svg width="40" height="40" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2563eb" strokeWidth="2" fill="#fff"/><rect x="7" y="13" width="10" height="4" rx="2" fill="#2563eb"/><rect x="9" y="8" width="6" height="5" rx="2.5" fill="#2563eb"/></svg> },
 ];
 
-const mainDescription = `**Rent a Car in Goa** with King Kane Goa. We provide a large selection of reasonably priced vehicle rentals in various categories, whether it’s for a business trip, a leisurely vacation, or a family vacation to Goa. To help you have a great time in Goa, we offer **self drive cars goa** for rent at incredibly low rates. Book our assured Sedan or assured SUV hire categories if you like to rent certain car manufacturers, such as Innova or Swift Dzire or Mahindra Thar. The automobile fleets from King Kane Goa are completely furnished with the newest conveniences and security measures to guarantee that your journeys will be secure, practical, and enjoyable.\n\nLook for the cheapest car rental in goa so you don’t have to worry about extra costs or your wallet while enjoying this idyllic destination. When it comes to self-drive vehicle rentals in Goa, the client experience is our main focus. You may drive as much as you want as long as you feel like you own the automobile. The price is based on a 24-hour period from 9 a.m. to 9 a.m.\n\nNote – To lower the overall cost, attempt to pick up the car at/after 9 a.m. and return it at/before 9 a.m. on the day of return.\n\nIt is strictly not allowed to take self drive cars outside Goa without permission. The government has a strict policy regarding this and heavy penalties will be charged for this violation.`;
+const mainDescription = `**Rent a Car in Goa** with King Kane Goa. We provide a large selection of reasonably priced vehicle rentals in various categories, whether it’s for a business trip, a leisurely vacation, or a family vacation to Goa. To help you have a great time in Goa, we offer **self drive cars goa** for rent at incredibly low rates. Book our assured Sedan or assured SUV hire categories if you like to rent certain car manufacturers, such as Innova or Swift Dzire or Mahindra Thar. The automobile fleets from King Kane Goa are completely furnished with the newest conveniences and security measures to guarantee that your journeys will be secure, practical, and enjoyable.\n\nLook for the cheapest car rental in goa so you don’t have to worry about extra costs or your wallet while enjoying this idyllic destination. When it comes to self-drive vehicle rentals in Goa, the client experience is our main focus. You may drive as much as you want as long as you feel like you own the automobile.\n\nNote – To lower the overall cost, attempt to pick up the car at/after 9 a.m. and return it at/before 9 a.m. on the day of return.\n\nIt is strictly not allowed to take self drive cars outside Goa without permission. The government has a strict policy regarding this and heavy penalties will be charged for this violation.`;
 
 function renderDescription(text) {
   // Render bold for **text**
@@ -78,64 +80,12 @@ const RentalCars = () => {
   const collapsedText = lines.slice(0, 4).join(' ');
 
   return (
-    <div className="min-h-screen bg-[#fcf7e3] overflow-x-hidden overflow-y-hidden">
-      {/* Top yellow info bar */}
-      <div className="w-full bg-[#ffe000] text-black text-center font-bold py-2 text-lg">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden overflow-y-auto">
+      {/* Top Info Bar */}
+      <div className="w-full bg-blue-600 text-white text-center font-bold py-2 text-lg">
         Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
       </div>
-      {/* Header */}
-      <header className="flex items-center justify-between px-8 py-6 bg-white shadow-md relative">
-        {/* Logo */}
-        <div className="flex items-center gap-5">
-          <img src={logoImg} alt="Logo" className="w-20 h-20 object-contain rounded-xl p-2 bg-white shadow-lg border border-gray-200" />
-          <div className="text-4xl font-extrabold text-black tracking-widest font-sans" style={{letterSpacing: '0.2em'}}>NEXA
-            <div className="text-base font-normal tracking-widest text-gray-500 mt-1" style={{letterSpacing: '0.15em'}}>CAR RENTAL GOA</div>
-          </div>
-        </div>
-        {/* Hamburger Icon for Mobile */}
-        <button
-          className="block md:hidden text-3xl text-black focus:outline-none z-30"
-          onClick={() => setSidebarOpen(true)}
-        >
-          <FaBars />
-        </button>
-        {/* Navigation */}
-        <nav className="hidden md:flex flex-wrap gap-4 md:gap-10 text-base md:text-xl font-semibold justify-center md:justify-start w-full md:w-auto">
-          <a href="/" className="hover:text-[#ffe000]">Home</a>
-          <a href="/rental-cars" className="text-[#ffe000]">Rental Cars</a>
-          <a href="#" className="hover:text-[#ffe000]">Fleet & Prices</a>
-          <a href="#" className="hover:text-[#ffe000]">FAQs</a>
-          <a href="#" className="hover:text-[#ffe000]">About</a>
-        </nav>
-        {/* Sidebar for Mobile */}
-        {sidebarOpen && (
-          <div className="fixed inset-0 z-40 flex">
-            {/* Overlay */}
-            <div className="fixed inset-0 bg-black opacity-40" onClick={() => setSidebarOpen(false)}></div>
-            {/* Sidebar */}
-            <div className="relative bg-white w-64 h-full shadow-xl z-50 flex flex-col p-8 animate-slideInLeft">
-              <button
-                className="absolute top-4 right-4 text-2xl text-black focus:outline-none"
-                onClick={() => setSidebarOpen(false)}
-              >
-                <FaTimes />
-              </button>
-              <nav className="flex flex-col gap-6 text-lg font-semibold mt-8">
-                <a href="/" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Home</a>
-                <a href="/rental-cars" className="text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Rental Cars</a>
-                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>Fleet & Prices</a>
-                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>FAQs</a>
-                <a href="#" className="hover:text-[#ffe000]" onClick={() => setSidebarOpen(false)}>About</a>
-              </nav>
-            </div>
-          </div>
-        )}
-        {/* Call to Book */}
-        <div className="bg-[#ffe000] px-10 py-5 rounded-2xl flex flex-col items-center shadow-xl">
-          <span className="text-base text-black font-medium">Call to Book Now</span>
-          <span className="text-3xl font-bold text-black">+918767008636</span>
-        </div>
-      </header>
+      <Navbar />
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
         {/* Heading and Description */}
@@ -189,55 +139,55 @@ const RentalCars = () => {
           {[
             {
               name: 'Thar Automatic Roxx Brand New',
-              price: '₹5000/day',
+              // price: '₹5000/day',
               image: tharImg,
               features: ['Automatic', '5 Seat', '4 Luggage', 'Petrol', 'SUV'],
             },
             {
               name: 'Hyundai Creta New Model',
-              price: '₹3500/day',
+              // price: '₹3500/day',
               image: cretaImg,
               features: ['Automatic', '5 Seat', '4 Luggage', 'Petrol', 'SUV'],
             },
             {
               name: 'Mahindra Thar New Automatic',
-              price: '₹3500/day',
+              // price: '₹3500/day',
               image: tharNewImg,
               features: ['Automatic', '4 Seat', '3 Luggage', 'Diesel', 'SUV'],
             },
             {
               name: 'Maruti Suzuki Swift New Model (Manual)',
-              price: '₹1200/day',
+              // price: '₹1200/day',
               image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&w=400',
               features: ['Manual', '5 Seat', '2 Luggage', 'Petrol', 'Hatchback'],
             },
             {
               name: 'Maruti Suzuki Swift (Automatic)',
-              price: '₹1500/day',
+              // price: '₹1500/day',
               image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&w=400',
               features: ['Automatic', '5 Seat', '2 Luggage', 'Petrol', 'Hatchback'],
             },
             {
               name: 'Maruti Suzuki Baleno New Model (Manual)',
-              price: '₹1300/day',
+              // price: '₹1300/day',
               image: 'https://images.pexels.com/photos/50632/pexels-photo-50632.jpeg?auto=compress&w=400',
               features: ['Manual', '5 Seat', '2 Luggage', 'Petrol', 'Hatchback'],
             },
             {
               name: 'Maruti Suzuki Baleno New Model (Automatic)',
-              price: '₹1600/day',
+              // price: '₹1600/day',
               image: 'https://images.pexels.com/photos/170782/pexels-photo-170782.jpeg?auto=compress&w=400',
               features: ['Automatic', '5 Seat', '2 Luggage', 'Petrol', 'Hatchback'],
             },
             {
               name: 'Hyundai Grand i10 Nios (Automatic)',
-              price: '₹1500/day',
+              // price: '₹1500/day',
               image: 'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&w=400',
               features: ['Automatic', '5 Seat', '2 Luggage', 'Petrol', 'Hatchback'],
             },
             {
               name: 'Innova Hycross - Automatic',
-              price: '₹4000/day',
+              // price: '₹4000/day',
               image: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&w=400',
               features: ['Automatic', '7 Seat', '4 Luggage', 'Diesel', 'SUV'],
             },
@@ -246,7 +196,7 @@ const RentalCars = () => {
               <img src={car.image} alt={car.name} className="w-full h-48 object-contain mb-8 rounded-xl bg-gray-100 shadow" />
               <h3 className="text-2xl font-bold text-black mb-8 leading-tight">{car.name}</h3>
               <div className="text-green-600 text-base font-semibold mb-2">Minimum 2 days booking</div>
-              <div className="text-2xl font-extrabold text-black mb-8">{car.price}</div>
+              {/* price removed */}
               <div className="flex justify-center gap-4 mb-8">
                 {car.features.map((f, i) => (
                   <div key={i} className="flex flex-col items-center">
@@ -259,8 +209,8 @@ const RentalCars = () => {
               </div>
               <div className="flex gap-3 mt-6 mt-auto">
                 <a
-                  href="tel:+918767008636"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#ffe000] text-black font-bold py-3 rounded-xl shadow hover:bg-yellow-400 transition"
+                  href="tel:+919987345878"
+                  className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white font-bold py-3 rounded-xl shadow hover:bg-blue-700 transition"
                 >
                   <FaPhoneAlt className="text-lg" />Call to Book
                 </a>
@@ -304,7 +254,7 @@ const RentalCars = () => {
             <div className="text-lg font-semibold mb-2">Get in Touch</div>
             <div className="flex items-center gap-2 text-gray-300">
               <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" stroke="#ffe000" strokeWidth="2"/></svg>
-              <span>+91 87670 08636</span>
+              <span>+91 99873 45878</span>
             </div>
             <div className="flex items-center gap-2 text-gray-300">
               <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="#ffe000" strokeWidth="2"/></svg>
