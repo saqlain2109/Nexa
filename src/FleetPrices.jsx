@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const fleet = [
   { name: 'Mahindra Thar', type: 'SUV', transmission: 'Automatic', seats: 4 },
@@ -12,8 +13,10 @@ const fleet = [
 
 const FleetPrices = () => (
   <div className="min-h-screen bg-gray-50 overflow-x-hidden overflow-y-auto">
-    <div className="w-full bg-blue-600 text-white text-center font-bold py-2 text-lg">
-      Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+    <div className="w-full bg-black text-[#f6c90e] text-center font-bold py-2 text-lg">
+    <marquee>
+        Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+        </marquee>
     </div>
     <Navbar />
     <main className="max-w-5xl mx-auto px-8 py-16">
@@ -41,10 +44,11 @@ const FleetPrices = () => (
         </table>
       </div>
       <div className="flex justify-center mt-10">
-        <a href="tel:+919987345878" className="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-700 transition text-xl">Call to Book Now</a>
+        <a href="tel:+917045809109" className="bg-[#1a2238] text-[#f6c90e] font-bold px-8 py-4 rounded-xl shadow hover:text-amber-300 transition text-xl">Call to Book Now</a>
       </div>
     </main>
+    <Footer />
   </div>
 );
 
-export default FleetPrices; 
+export default FleetPrices;

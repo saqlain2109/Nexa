@@ -1,10 +1,13 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const About = () => (
   <div className="min-h-screen bg-gray-50 overflow-x-hidden overflow-y-auto">
-    <div className="w-full bg-blue-600 text-white text-center font-bold py-2 text-lg">
-      Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+    <div className="w-full bg-black text-[#f6c90e]   text-center font-bold py-2 text-lg">
+    <marquee>
+        Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+        </marquee>
     </div>
     <Navbar />
     <main className="max-w-3xl mx-auto px-8 py-16">
@@ -18,8 +21,8 @@ const About = () => (
         </p>
         <p className="text-lg text-gray-800 mb-6">
           <b>Contact Us:</b><br/>
-          Phone: <a href="tel:+919987345878" className="text-blue-600 underline">+91 99873 45878</a><br/>
-          Email: <a href="mailto:kingkanegoa.rentals@gmail.com" className="text-blue-600 underline">kingkanegoa.rentals@gmail.com</a><br/>
+          Phone: <a href="tel:+917045809109" className="text-blue-600 underline">+917045809109</a><br/>
+          Email: <a href="mailto:kingkanegoa.rentals@gmail.com" className="text-blue-600 underline">Nexarentals@gmail.com</a><br/>
           Location: Goa, India
         </p>
         <p className="text-lg text-gray-800">
@@ -27,7 +30,8 @@ const About = () => (
         </p>
       </div>
     </main>
+    <Footer />
   </div>
 );
 
-export default About; 
+export default About;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const faqs = [
   {
@@ -26,8 +27,10 @@ const faqs = [
 
 const FAQs = () => (
   <div className="min-h-screen bg-gray-50 overflow-x-hidden overflow-y-auto">
-    <div className="w-full bg-blue-600 text-white text-center font-bold py-2 text-lg">
-      Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+    <div className="w-full bg-black text-[#f6c90e] text-center font-bold py-2 text-lg">
+    <marquee>
+        Minimum 2 days booking for all self drive 4-wheelers in Goa. We don't provide cars for 1 day.
+        </marquee>
     </div>
     <Navbar />
     <main className="max-w-3xl mx-auto px-8 py-16">
@@ -41,7 +44,8 @@ const FAQs = () => (
         ))}
       </div>
     </main>
+    <Footer />
   </div>
 );
 
-export default FAQs; 
+export default FAQs;
