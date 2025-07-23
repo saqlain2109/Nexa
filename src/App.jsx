@@ -120,10 +120,6 @@ const App = () => {
             </div>
           ))}
         </div>
-        {/* View All Cars Button */}
-        <div className="flex justify-center mt-10">
-          <button className="bg-[#1a2238] text-[#f6c90e] font-bold px-8 py-3 rounded-lg shadow hover:bg-[#f6c90e] hover:text-[#1a2238] transition">View All Cars</button>
-        </div>
       </section>
       {/* Info Section: Looking for Car Hire in Goa? */}
       <section className="max-w-full min-h-[500px] mx-auto px-4 sm:px-8 py-8 sm:py-12 flex flex-col md:flex-row md:items-start md:justify-between bg-white rounded-xl shadow-sm mb-8">
