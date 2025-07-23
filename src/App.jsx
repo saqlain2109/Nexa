@@ -214,6 +214,25 @@ const App = () => {
       </section>
       {/* Footer */}
       <Footer />
+      
+      {/* Fixed Call and WhatsApp Buttons */}
+      <div className="fixed bottom-6 left-0 right-0 flex justify-between px-4 z-50">
+        <a
+          href="tel:+917045809109"
+          className="flex items-center justify-center gap-2 bg-[#1a2238] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:bg-[#f6c90e] hover:text-[#1a2238] transition-all"
+        >
+          <FaPhoneAlt className="text-[30px]" />
+        </a>
+        
+        <a 
+          href="https://wa.me/917045809109?text=Hi, I want to book a car for rental."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-all"
+        >
+          <FaWhatsapp className="text-[40px]" />
+        </a>
+      </div>
     </div>
   )
 }
