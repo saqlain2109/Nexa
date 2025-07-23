@@ -93,8 +93,8 @@ const RentalCars = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
         {/* Heading and Description */}
-        <div className="bg-white rounded-xl shadow p-6 md:p-10 mb-8 flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-6 text-center">Rent a Car in Goa – Nexa Car Rental Goa</h1>
+        <div className="bg-white rounded-xl shadow p-4 sm:p-6 md:p-10 mb-8 flex flex-col items-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-4 sm:mb-6 text-center">Rent a Car in Goa – Nexa Car Rental Goa</h1>
           <div className="relative w-full max-w-4xl mx-auto text-center">
             <div
               className={`text-gray-800 text-lg md:text-xl leading-relaxed mx-auto transition-all duration-300 ${showFull ? '' : 'line-clamp-4'} whitespace-pre-line font-normal`}
@@ -138,35 +138,35 @@ const RentalCars = () => {
           ))}
         </div> */}
         {/* Cars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-14 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-x-12 md:gap-y-14 justify-items-center">
           {/* Dummy car cards */}
           {cars.map((car, idx) => (
-            <div key={idx} className="bg-white rounded-2xl shadow-2xl p-8 flex flex-col w-full max-w-[390px] md:max-w-[420px] mx-auto transition-transform hover:scale-[1.025] border border-gray-100">
-              <img src={car.image} alt={car.name} className="w-full h-48 object-contain mb-8 rounded-xl bg-gray-100 shadow" />
-              <h3 className="text-2xl font-bold text-black mb-8 leading-tight">{car.name}</h3>
-              <div className="text-green-600 text-base font-semibold mb-2">Minimum 2 days booking</div>
-              <div className="flex justify-center gap-4 mb-8">
+            <div key={idx} className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col w-full max-w-[390px] md:max-w-[420px] mx-auto transition-transform hover:scale-[1.025] border border-gray-100">
+              <img src={car.image} alt={car.name} className="w-full h-40 sm:h-48 object-contain mb-4 sm:mb-8 rounded-xl bg-gray-100 shadow" />
+              <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 sm:mb-8 leading-tight">{car.name}</h3>
+              <div className="text-green-600 text-sm sm:text-base font-semibold mb-2">Minimum 2 days booking</div>
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
                 {car.features.map((f, i) => (
                   <div key={i} className="flex flex-col items-center">
-                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-gray-200 mb-1 shadow-sm">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white border border-gray-200 mb-1 shadow-sm">
                       {featureIcons[f] || <span className="text-xs text-gray-400">?</span>}
                     </div>
-                    <span className="text-sm text-gray-700 font-medium mt-1">{f}</span>
+                    <span className="text-xs sm:text-sm text-gray-700 font-medium mt-1 text-center">{f}</span>
                   </div>
                 ))}
               </div>
-              <div className="flex gap-3 mt-6 mt-auto">
+              <div className="flex flex-col sm:flex-row gap-3 mt-4 sm:mt-6 mt-auto">
                 <a
                   href="tel:+917045809109"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#1a2238] text-white font-bold py-3 rounded-xl shadow hover:bg-[#f6c90e] hover:text-[#1a2238] transition"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[#1a2238] text-white font-bold py-2 sm:py-3 rounded-xl shadow hover:bg-[#f6c90e] hover:text-[#1a2238] transition text-sm sm:text-base"
                 >
                   <FaPhoneAlt className="text-lg" />Call to Book
                 </a>
                 <button 
                   onClick={() => window.open(`https://wa.me/917045809109?text=Hi, I want to book ${car.name} for rental.`, '_blank')}
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#f6c90e] text-[#1a2238] font-bold py-3.5 px-1 rounded-xl shadow hover:bg-[#1a2238] hover:text-[#f6c90e] transition"
+                  className="flex-1 flex items-center justify-center gap-1 sm:gap-2 bg-[#f6c90e] text-[#1a2238] font-bold py-2 sm:py-3 px-1 rounded-xl shadow hover:bg-[#1a2238] hover:text-[#f6c90e] transition text-sm sm:text-base"
                 >
-                  <FaWhatsapp className="text-3xl ml-2" />Book on WhatsApp
+                  <FaWhatsapp className="text-2xl sm:text-3xl" />Book on WhatsApp
                 </button>
               </div>
             </div>

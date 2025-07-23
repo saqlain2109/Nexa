@@ -28,7 +28,7 @@ const Navbar = () => {
         <span className="text-xl font-bold text-[#f6c90e]">+91 70458 09109</span>
       </a>
       {/* Mobile Menu Button */}
-      <button className="lg:hidden text-3xl text-[#1a2238] focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className="lg:hidden text-3xl text-white focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
       {/* Mobile Menu */}
@@ -51,4 +51,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

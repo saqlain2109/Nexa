@@ -19,32 +19,32 @@ const FleetPrices = () => (
         </marquee>
     </div>
     <Navbar />
-    <main className="max-w-5xl mx-auto px-8 py-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-black mb-10 text-center">Our Fleet & Features</h1>
+    <main className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
+      <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-6 sm:mb-10 text-center">Our Fleet & Features</h1>
       <div className="overflow-x-auto rounded-xl shadow-lg bg-white">
-        <table className="min-w-full text-left text-lg">
+        <table className="min-w-full text-left text-sm sm:text-base md:text-lg">
           <thead className="bg-blue-50">
             <tr>
-              <th className="py-4 px-6 font-bold">Car</th>
-              <th className="py-4 px-6 font-bold">Type</th>
-              <th className="py-4 px-6 font-bold">Transmission</th>
-              <th className="py-4 px-6 font-bold">Seats</th>
+              <th className="py-3 sm:py-4 px-3 sm:px-6 font-bold">Car</th>
+              <th className="py-3 sm:py-4 px-3 sm:px-6 font-bold">Type</th>
+              <th className="py-3 sm:py-4 px-3 sm:px-6 font-bold">Transmission</th>
+              <th className="py-3 sm:py-4 px-3 sm:px-6 font-bold">Seats</th>
             </tr>
           </thead>
           <tbody>
             {fleet.map((car, i) => (
               <tr key={i} className="border-b last:border-b-0 hover:bg-blue-50 transition">
-                <td className="py-4 px-6 font-semibold">{car.name}</td>
-                <td className="py-4 px-6">{car.type}</td>
-                <td className="py-4 px-6">{car.transmission}</td>
-                <td className="py-4 px-6">{car.seats}</td>
+                <td className="py-3 sm:py-4 px-3 sm:px-6 font-semibold">{car.name}</td>
+                <td className="py-3 sm:py-4 px-3 sm:px-6">{car.type}</td>
+                <td className="py-3 sm:py-4 px-3 sm:px-6">{car.transmission}</td>
+                <td className="py-3 sm:py-4 px-3 sm:px-6">{car.seats}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <div className="flex justify-center mt-10">
-        <a href="tel:+917045809109" className="bg-[#1a2238] text-[#f6c90e] font-bold px-8 py-4 rounded-xl shadow hover:text-amber-300 transition text-xl">Call to Book Now</a>
+      <div className="flex justify-center mt-6 sm:mt-10">
+        <a href="tel:+917045809109" className="bg-[#1a2238] text-[#f6c90e] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow hover:text-amber-300 transition text-base sm:text-xl">Call to Book Now</a>
       </div>
     </main>
     <Footer />

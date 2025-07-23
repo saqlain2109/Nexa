@@ -33,13 +33,13 @@ const FAQs = () => (
         </marquee>
     </div>
     <Navbar />
-    <main className="max-w-3xl mx-auto px-8 py-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-black mb-10 text-center">Frequently Asked Questions</h1>
+    <main className="max-w-3xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
+      <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-6 sm:mb-10 text-center">Frequently Asked Questions</h1>
       <div className="bg-white rounded-xl shadow-lg divide-y">
         {faqs.map((item, i) => (
-          <div key={i} className="p-8">
-            <div className="text-xl font-bold text-blue-700 mb-2">Q. {item.q}</div>
-            <div className="text-lg text-gray-800">{item.a}</div>
+          <div key={i} className="p-4 sm:p-6 md:p-8">
+            <div className="text-lg sm:text-xl font-bold text-blue-700 mb-2">Q. {item.q}</div>
+            <div className="text-base sm:text-lg text-gray-800">{item.a}</div>
           </div>
         ))}
       </div>
